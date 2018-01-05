@@ -28,9 +28,9 @@ public class ClassDaoImpl implements ClassDao{
 			
 			while (rs.next()) {
 				ClassInfo ci = new ClassInfo();
-				ci.setCino(rs.getInt("cino"));
-				ci.setCiname(rs.getString("ciname"));
-				ci.setCidesc(rs.getString("cidesc"));
+				ci.setCiNo(rs.getInt("cino"));
+				ci.setCiName(rs.getString("ciname"));
+				ci.setCiDesc(rs.getString("cidesc"));
 				classList.add(ci);			
 			}
 		} catch (SQLException e) {

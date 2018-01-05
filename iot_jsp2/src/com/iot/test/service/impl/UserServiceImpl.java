@@ -1,6 +1,8 @@
 package com.iot.test.service.impl;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -21,12 +23,12 @@ public class UserServiceImpl implements UserService{
 		UserClass uc = gs.fromJson(req.getParameter("param"), UserClass.class);
 		UserClass checkUc = ud.selectUser(uc.getUiId());
 		HashMap<String, Object> hm = new HashMap<String, Object>();
-		hm.put("msg", "¿À ·Î±×ÀÎ ¼º°øÇÏ¼Ì³×¿ä!");
+		hm.put("msg", "ë¡œê·¸ì¸ì„±ê³µ");
 		hm.put("login", "ok");
 		
 		if(checkUc!=null) {
 			if(!checkUc.getUiPwd().equals(uc.getUiPwd())) {
-				hm.put("msg", "ºñ¹Ğ¹øÈ£¸¦ È®ÀÎÇØÁÖ¼¼¿ä");
+				hm.put("msg", "ë¹„ë°€ë²ˆí˜¸ í™•ì¸ìš”ì²­");
 				hm.put("login", "no");
 			}
 			else {
@@ -35,7 +37,7 @@ public class UserServiceImpl implements UserService{
 			}
 		}
 		else {
-			hm.put("msg", "¾ÆÀÌµğ¸¦ È®ÀÎÇØÁÖ¼¼¿ä!");
+			hm.put("msg", "ì•„ì´ë”” í™•ì¸ìš”ì²­");
 			hm.put("login", "no");
 		}
 		return hm;
@@ -46,6 +48,27 @@ public class UserServiceImpl implements UserService{
 		HttpSession hs = req.getSession();
 		hs.invalidate();
 		
+	}
+
+	@Override
+	public void signin(HttpServletRequest req) {
+		String json = req.getParameter("param");
+		UserClass uc = gs.fromJson(json,UserClass.class);
+		int result = ud.insertUser(uc);
+		Map<String,String> rm = new HashMap<String, String>();
+		rm.put("result","no");
+		rm.put("result","ì‹¤íŒ¨");
+		if(result==1) {
+			rm.put("result","ok");
+			rm.put("result","ì„±ê³µ");
+		}
+		req.setAttribute("resStr", gs.toJson(rm));
+	}
+
+	@Override
+	public ArrayList<UserClass> getUserList() {
+		
+		return ud.selectUserList();
 	}
 
 }
