@@ -21,6 +21,7 @@ public class UserServiceImpl implements UserService{
 	public HashMap<String, Object> login(HttpServletRequest req) {
 		
 		UserClass uc = gs.fromJson(req.getParameter("param"), UserClass.class);
+		System.out.println(uc.getUiId());
 		UserClass checkUc = ud.selectUser(uc.getUiId());
 		HashMap<String, Object> hm = new HashMap<String, Object>();
 		hm.put("msg", "로그인성공");

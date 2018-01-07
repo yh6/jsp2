@@ -46,15 +46,19 @@ public class UserServlet extends HttpServlet {
 		String uri = req.getRequestURI();
 		System.out.println("uri?? "+ uri);
 		String cmd = getCommand(uri);
+		System.out.println("들어와??");
 		System.out.println(cmd);
 		if(cmd.equals("login")) {
+			
 			HashMap<String, Object> hm = us.login(req);
+			
 			out.println(gs.toJson(hm));
 		}else if(cmd.equals("logout")) {
 			us.logout(req);
 			RequestDispatcher rd= req.getRequestDispatcher("/view/user/login");
 			rd.forward(req, res);
 		}else if(cmd.equals("signin")) {
+			System.out.println("들어왓어?가입??");
 			us.signin(req);
 			out.println(req.getAttribute("resStr"));
 			//System.out.println(uc);
