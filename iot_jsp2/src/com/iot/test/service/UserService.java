@@ -12,4 +12,6 @@ public interface UserService {
 	public HashMap<String, Object> login(HttpServletRequest req);
 	public void logout(HttpServletRequest req);
 	public void signin(HttpServletRequest req);
+	public String deleteUser(HttpServletRequest req);
+	public String updateUsesr(HttpServletRequest req);
 }

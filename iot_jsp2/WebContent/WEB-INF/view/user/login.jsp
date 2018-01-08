@@ -8,17 +8,18 @@
 
 
 
+
 </head>
 <link rel="stylesheet" href="<%=rootPath%>/ui/css/sign.css" />
 
 
 
 
-<body>
+<body >
 
 	<jsp:include page="/WEB-INF/view/common/header.jsp" flush="false" />
 	
-<video width="1000" height="400" controls loop autoplay muted:muted>
+<video min-width="0" min-height="0" controls loop autoplay muted:muted>
   <source src="/vod/Fireworks.mp4" type="video/mp4">
   <source src="movie.ogg" type="video/ogg">
 </video>
@@ -39,8 +40,7 @@
 
 							<label for="userId" class="sr-only">ID</label> <input type="text"
 								id="userId" name="userId" class="form-control" placeholder="ID" autofocus> 
-								<label for="userPwd" class="sr-only">Password</label>
-								
+								<label for="userPwd" class="sr-only">Password</label>								
 							<input type="password" id="userPwd" name="userPwd"
 								class="form-control" placeholder="Password"> 
 							<input class="btn btn-lg btn-primary btn-block" type="button"
@@ -77,8 +77,7 @@ function checkValue(){
 			var obj = JSON.parse(res);
 			alert(obj.msg);
 			if(obj.login=="ok"){
-				location.href="<%=rootPath%>
-	/";
+				location.href="<%=rootPath%>/";
 				}
 			}
 		})

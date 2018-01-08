@@ -29,7 +29,7 @@ if(user!=null){
           <ul class="nav navbar-nav">
             <li class="active"><a href="<%=rootPath%>/">Home</a></li>
             <li><a href="<%=loginUrl%>"><%=loginMenu%></a></li>
-            <li><a href="<%=rootPath%>/view/user/list">예약자</a></li>
+            <li><a href="<%=rootPath%>/view/user/list">예약자명단</a></li>
           </ul>
         </div>
       </div>
