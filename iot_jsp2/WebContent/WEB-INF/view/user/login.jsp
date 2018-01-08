@@ -7,48 +7,31 @@
 <title>Login</title>
 
 
-
-
 </head>
+
 <link rel="stylesheet" href="<%=rootPath%>/ui/css/sign.css" />
 
 
+<iframe width="1000" height="450" 
+src="/vod/Fireworks.mp4?&autoplay=1&loop=1" muted="0" preload="auto"  gesture="media" allow="encrypted-media" ></iframe>
 
 
 <body >
 
 	<jsp:include page="/WEB-INF/view/common/header.jsp" flush="false" />
-	
-<video min-width="0" min-height="0" controls loop autoplay muted:muted>
-  <source src="/vod/Fireworks.mp4" type="video/mp4">
-  <source src="movie.ogg" type="video/ogg">
-</video>
+					
+				<h3 id="hText2" class="form-signin-heading" position="margin-top-left"  >Login in</h3>
 
-	<div class="result_div"></div>
-	<div class="container">
-		<div class="starter-template">
-
-			<div class="pop_area pop_video">
-				<div class="pop_wrap" style="top: 100px">
-					<div class="video_wrapper">
-
-						<form class="form-signin">
-
-
-
-							<h2 id="hText2" class="form-signin-heading" >로그인</h2>
-
-							<label for="userId" class="sr-only">ID</label> <input type="text"
-								id="userId" name="userId" class="form-control" placeholder="ID" autofocus> 
-								<label for="userPwd" class="sr-only">Password</label>								
-							<input type="password" id="userPwd" name="userPwd"
-								class="form-control" placeholder="Password"> 
+			<label for="userId" class="sr-only">ID</label> <input type="text"
+		id="userId" name="userId" class="form-control" style="text-position:marain-top-left; width:200px; height:40px" placeholder="ID" autofocus> 
+		<label for="userPwd" class="sr-only">Password</label>								
+		<input type="password" id="userPwd" name="userPwd"
+							class="form-control" style="text-align:left; width:200px; height:40px" placeholder="Password"> 
 							<input class="btn btn-lg btn-primary btn-block" type="button"
-								id="loginBtn" value="Login" onclick="checkValue()"> 
+								id="loginBtn" style="text-align:left; width:200px; height:40px" value="Login" onclick="checkValue()"> 
 								<a href="/view/user/signin">회원가입</a>
-						</form>
-					</div>
-				</div>
+					
+			
 </body>
 <script>
 

@@ -15,6 +15,7 @@
 			<form class="form-signin">
 				<table class="table">
 					<tr>
+					<h1>회 원 가 입</h1>
 						<th>이름</th>
 						<td><input type="text" id="uiName" name="uiName"
 							class="form-control" placeholder="이름" autofocus></td>
@@ -49,7 +50,7 @@
 					<tr>
 						<td colspan="2"> 
 							<input class="btn btn-lg btn-primary btn-block" type="button"
-								id="singnBtn" value="Signin" onclick="signin()">
+								id="singnBtn" value="완 료" onclick="signin()">
 						</td>
 					</tr>
 				</table>

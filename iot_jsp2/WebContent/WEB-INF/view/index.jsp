@@ -13,7 +13,7 @@
 <style>
 body {
 	background-image:
-		url("http://english.visitseoul.net/comm/getImage?srvcId=MEDIA&parentSn=16641&fileTy=MEDIA&fileNo=1&thumbTy=L");
+		url("/img/index1.jpg");
 	background-attachment: fixed;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -38,19 +38,19 @@ td {
 
 		<div class="starter-template">
 			<div style="
-			 color: white; font-family:고딕체;text-align:right;"><%=user.getUiName()%>님 예약이 완료되었습니다.</div>
+			 color: white; font-family:고딕체;text-align:left;"><%=user.getUiName()%>님 예약이 완료되었습니다.</div>
 			<br>
 			<br>
 			<br>
 			<br>
 			<div style="
-			 font-weight: bold; font-size:2.0em;text-align:right;
+			 font-weight: bold; font-size:2.0em;text-align:left;
 			 color: white; font-family:고딕체;">2018 세계불꽃축제</div>
 				<div style="
-			  font-size:1.7em;text-align:right; 
+			  font-size:1.7em;text-align:left; 
 			 color: white; font-family:고딕체;"> World Fireworks Festival</div>
 				<div style="
-			 font-weight: bold; font-size:1.9em;text-align:right; 
+			 font-weight: bold; font-size:1.9em;text-align:left; 
 			 color: white; font-family:고딕체;">COMING SOON</div>
 		</div>
 	</div>

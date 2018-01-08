@@ -4,6 +4,24 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+
+<style>
+body {
+	background-image:
+		url("/img/list.jpg");
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+table {
+	background-color: transparent;
+}
+
+td {
+	background-color: transparent;
+}
+</style>
 </head>
 <link rel="stylesheet" href="<%=rootPath%>/ui/css/list.css" />
 <body>
@@ -36,7 +54,7 @@
 		                        <th class="text-center" data-field="uiAge,txt">나이</th>
 		                        <th class="text-center" data-field="uiRegdate,ro">가입일자</th>
 		                        <th class="text-center" data-field="address,txt">주소</th>		                   	                    
-		                        <th class="text-center" data-field="BTN"><em class="glyphicon glyphicon-asterisk"></em></th>
+		                        <th class="text-center" data-field="BTN"><em class="glyphicon glyphicon-cog"></em></th>
 		                    </tr>  
 	                  	</thead>
 	                  	<tbody id="result_tb">
