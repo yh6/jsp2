@@ -80,7 +80,7 @@ public class UserServiceImpl implements UserService{
 		int result = ud.deleteUSer(uc);
 		Map<String,String> rm = new HashMap<String, String>();
 		rm.put("result","no");
-		rm.put("result","실패");
+		rm.put("msg","실패");
 		if(result==1) {			
 			rm.put("result","ok");
 			rm.put("msg","삭제성공");			

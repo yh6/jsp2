@@ -6,8 +6,9 @@
 <title>Insert title here</title>
 </head>
 <link rel="stylesheet" href="<%=rootPath%>/ui/css/sign.css" />
+
 <body >
-	<jsp:include page="/WEB-INF/view/common/header.jsp" flush="false" />
+	<jsp:include page="/WEB-INF/view/common/header.jspf" flush="false" />
 
 	<div class="container">
 		<div class="starter-template">
@@ -49,8 +50,8 @@
 					</tr>
 					<tr>
 						<td colspan="2"> 
-							<input class="btn btn-lg btn-primary btn-block" type="button"
-								id="singnBtn" value="완 료" onclick="signin()">
+							<input class="btn btn-lg btn-primary btn-block" data-role="button"
+								id="singnBtn"  value="완 료" onclick="signin()">
 						</td>
 					</tr>
 				</table>

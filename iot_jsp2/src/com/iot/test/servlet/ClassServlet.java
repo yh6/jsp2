@@ -18,7 +18,7 @@ import com.iot.test.service.UserService;
 import com.iot.test.service.impl.ClassServiceImpl;
 import com.iot.test.service.impl.UserServiceImpl;
 import com.iot.test.vo.ClassInfo;
-//@WebServlet("/class/list") ÀÌ·¸°ÔÇÏ¸é web.xml¿¡ ¸ÊÇÎÀ» ¾ÈÇØÁàµÎµÊ
+//@WebServlet("/class/list") ï¿½Ì·ï¿½ï¿½ï¿½ï¿½Ï¸ï¿½ web.xmlï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îµï¿½
 public class ClassServlet extends HttpServlet {
 	ClassService cs = new ClassServiceImpl();
 	Gson gs = new Gson();
@@ -41,17 +41,14 @@ public class ClassServlet extends HttpServlet {
 	}
 
 	public void doProcess(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
-		req.setCharacterEncoding("utf-8");
-		res.setCharacterEncoding("utf-8");
-		res.setContentType("text/html;charset=utf-8");
+		
 		PrintWriter out =res.getWriter();
 		String uri = req.getRequestURI();
-		System.out.println("uri?? "+ uri);
 		String cmd = getCommand(uri);
-		System.out.println(cmd);
 		if(cmd.equals("list")) {
 			List<ClassInfo> classList = cs.getClassList();
 			out.println(gs.toJson(classList));
+			System.out.println(gs.toJson(classList));
 		}
 	}
 }

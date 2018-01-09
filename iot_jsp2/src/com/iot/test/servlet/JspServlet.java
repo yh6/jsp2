@@ -29,13 +29,10 @@ public class JspServlet extends HttpServlet {
 	}
 
 	public void doProcess(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
-		req.setCharacterEncoding("utf-8");
-		res.setCharacterEncoding("utf-8");
-		res.setContentType("text/html;charset=utf-8");
+		
 		PrintWriter out = res.getWriter();
 		String uri = req.getRequestURI();
 		uri = "/WEB-INF" + uri + ".jsp";
-		System.out.println("JspServlet uri : "+uri);
 		RequestDispatcher rd = req.getRequestDispatcher(uri);
 		rd.forward(req, res);
 	}

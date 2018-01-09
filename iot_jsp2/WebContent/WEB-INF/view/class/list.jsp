@@ -1,31 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-
-<style>
-body {
-	background-image: url("/img/list.jpg");
-	background-attachment: fixed;
-	background-repeat: no-repeat;
-	background-size: cover;
-}
-
-table {
-	background-color: transparent;
-}
-
-td {
-	background-color: transparent;
-}
-</style>
 </head>
-<link rel="stylesheet" href="<%=rootPath%>/ui/css/list.css" />
+
+
+
 <body>
 	<jsp:include page="/WEB-INF/view/common/header.jspf" flush="false" />
-	<br>
+
 	<div class="container">
 		<div class="row">
 
@@ -34,29 +20,38 @@ td {
 				<div class="panel panel-default panel-table">
 					<div class="panel-heading">
 						<div class="row">
+
 							<div class="col col-xs-6">
-								<h3 class="panel-title">User List</h3>
+								<h3 class="panel-title" >
+									Class List
+					<button type="button" class="btn btn-sm btn-primary btn-create"
+						
+										onclick="signin()">추가</button>
+					
+								</h3>
+
 							</div>
+
+
 							<div class="col col-xs-6 text-right">
-								<input type="text" class="input">
+								<input type="text" class="input"> <a
+									href="/view/user/signin"></a>
 								<button type="button" class="btn btn-sm btn-primary btn-create">검색</button>
 							</div>
+
 						</div>
 					</div>
-					<div class="panel-body"> 
+					<div class="panel-body">
 						<table style="table-layout: fixed" id="grid1" data-key="uiNo"
 							class="table table-striped table-bordered table-list">
 							<thead>
 								<tr>
-									<th class="text-center" data-field="uiNo,ro">번호</th>
-									<th class="text-center" data-field="uiId,ro">ID</th>
-									<th class="text-center" data-field="uiName,txt">이름</th>
-									<th class="text-center" data-field="uiAge,txt">나이</th>
-									<th class="text-center" data-field="uiRegdate,ro">가입일자</th>
-									<th class="text-center" data-field="address,txt">주소</th>
-									<th class="text-center" data-field="BTN">
-									<em class="glyphicon glyphicon-cog"></em></th>
-								
+									<th class="text-center" data-field="ciNo,ro">번호</th>
+									<th class="text-center" data-field="ciName,txt">반이름</th>
+									<th class="text-center" data-field="ciDesc,txt">반정보</th>
+
+									<th class="text-center" data-field="BTN"><em
+										class="glyphicon glyphicon-cog"></em></th>
 								</tr>
 							</thead>
 							<tbody id="result_tb">
@@ -68,54 +63,8 @@ td {
 		</div>
 	</div>
 </body>
+</html>
 <script>
-
-function deleteUser(uiNo){
-	var isDelete = confirm("정말 삭제하시겠습니까?");	
-	var param = "uiNo=" + uiNo;
-	if(isDelete){
-		$.ajax({
-			url : '/user/delete',
-			type : 'post',
-			data : param,
-			dataType : 'json',
-			success:function(res){
-				alert(res.msg);
-				if(res.result=='ok'){
-					location.reload();
-				}
-			},
-			error:function(xhr,status,error){				
-			}
-		})
-	}
-}
-
-function updateUser(uiNo){
-	var isupdate = confirm("정말 수정하시겠습니까??");
-	var uiName = $("#uiName" + uiNo).val().trim();
-	var uiAge = $("#uiAge" + uiNo).val().trim();
-	var address = $("#address" + uiNo).val().trim();
-	var param = {uiNo:uiNo, uiName:uiName, uiAge:uiAge, address:address};
-	param = "param=" + JSON.stringify(param);
-	
-	$.ajax({
-		url : '/user/update',
-		type : 'post',
-		data : param,
-		dataType : 'json',
-		success:function(res){
-			alert(res.msg);
-			if(res.result=='ok'){
-				location.reload();
-			}
-		},
-		error:function(xhr,status,error){				
-		}
-	})
-	
-}
-
 var colsInfo = [];
 $(document).ready(function(){
 	var colList = $("#grid1 th[data-field]");
@@ -124,7 +73,7 @@ $(document).ready(function(){
 	}
 	var keyCol = $("#grid1").attr("data-key");
 	$.ajax({
-		url : '/user/list',
+		url : '/class/list',
 		type : 'get',
 		success:function(res){
 			var list = JSON.parse(res);
@@ -159,5 +108,54 @@ $(document).ready(function(){
 	});
 	
 });
+function deleteClass(ciNo){
+	var isDelete = confirm("정말 삭제하시겠습니까?");	
+	var param = "ciNo=" + ciNo;
+	if(isDelete){
+		$.ajax({
+			url : '/class/delete',
+			type : 'post',
+			data : param,
+			dataType : 'json',
+			success:function(res){
+				alert(res.msg);
+				if(res.result=='ok'){
+					location.reload();
+				}
+			},
+			error:function(xhr,status,error){				
+			}
+		})
+	}
+}
+
+function updateClass(ciNo){
+	var isupdate = confirm("정말 수정하시겠습니까??");
+	var ciName = $("#ciName" + ciNo).val().trim();
+	var ciDesc = $("#ciDesc" + ciNo).val().trim();
+
+	var param = {ciName:ciName, ciDesc:ciDesc};
+	param = "param=" + JSON.stringify(param);
+	
+	$.ajax({
+		url : '/class/update',
+		type : 'post',
+		data : param,
+		dataType : 'json',
+		success:function(res){
+			alert(res.msg);
+			if(res.result=='ok'){
+				location.reload();
+			}
+		},
+		error:function(xhr,status,error){				
+		}
+	})
+	
+}
+
+function signin(){
+	location.href="/view/class/signin";
+	}
+
 </script>
-</html>

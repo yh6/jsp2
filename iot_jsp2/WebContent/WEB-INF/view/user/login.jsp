@@ -12,24 +12,23 @@
 <link rel="stylesheet" href="<%=rootPath%>/ui/css/sign.css" />
 
 
-<iframe width="1000" height="450" 
+<iframe width="100%" height="450" 
 src="/vod/Fireworks.mp4?&autoplay=1&loop=1" muted="0" preload="auto"  gesture="media" allow="encrypted-media" ></iframe>
 
 
 <body >
 
-	<jsp:include page="/WEB-INF/view/common/header.jsp" flush="false" />
+	<jsp:include page="/WEB-INF/view/common/header.jspf" flush="false" />
 					
-				<h3 id="hText2" class="form-signin-heading" position="margin-top-left"  >Login in</h3>
+				<h3 id="hText2" class="form-signin-heading" style="color:white">Login in</h3>
 
 			<label for="userId" class="sr-only">ID</label> <input type="text"
-		id="userId" name="userId" class="form-control" style="text-position:marain-top-left; width:200px; height:40px" placeholder="ID" autofocus> 
+		id="userId" name="userId" class="form-control" style="text-position:marain-top-left; width:200px; height:40px;float:left; margin-right:10px" placeholder="ID" autofocus> 
 		<label for="userPwd" class="sr-only">Password</label>								
-		<input type="password" id="userPwd" name="userPwd"
-							class="form-control" style="text-align:left; width:200px; height:40px" placeholder="Password"> 
+		<input type="password" id="userPwd" name="userPwd" class="form-control" style="text-align:left; width:200px; height:40px;float:left; margin-right:10px" placeholder="Password"> 
 							<input class="btn btn-lg btn-primary btn-block" type="button"
-								id="loginBtn" style="text-align:left; width:200px; height:40px" value="Login" onclick="checkValue()"> 
-								<a href="/view/user/signin">회원가입</a>
+								id="loginBtn" style=" width:200px; height:40px;float:left; margin-right:10px " value="Login" onclick="checkValue()"> 
+								<a href="/view/user/signin"  style="color:white">회원가입</a>
 					
 			
 </body>
