@@ -56,7 +56,7 @@ public class UserDaoImpl implements UserDao {
 	}
 
 	@Override
-	public int insertUser(UserClass uc) {
+	public int signinUser(UserClass uc) {
 		Connection con = null;
 		PreparedStatement ps = null;
 		ResultSet rs = null;

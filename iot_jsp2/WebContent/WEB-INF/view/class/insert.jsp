@@ -19,20 +19,20 @@
 					<tr>
 					<h1>반 추가</h1>
 					<br>
-						<th>반이름</th>
+						<th>참가국</th>
 						<td><input type="text" id="ciName" name="ciName"
-							class="form-control" placeholder="반이름" autofocus></td>
+							class="form-control" placeholder="참가국" autofocus></td>
 					</tr>
 					<tr>
-						<th>반정보</th>
+						<th>주제</th>
 						<td><input type="text" id="ciDesc" name="ciDesc"
-							class="form-control" placeholder="반정보"></td>
+							class="form-control" placeholder="주제"></td>
 					</tr>
 		
 					<tr>
 						<td colspan="2"> 
 							<input class="btn btn-lg btn-primary btn-block" data-role="button"
-								id="singnBtn"  value="추 가 완 료" onclick="signin()">
+								id="singnBtn"  value="추 가 완 료" onclick="insert()">
 						</td>
 					</tr>
 				</table>
@@ -41,7 +41,7 @@
 	</div>
 </body>
 <script>
-function signin(){
+function insert(){
 
 	var ciName = $("#ciName").val().trim();
 	var ciDesc = $("#ciDesc").val().trim();
@@ -49,12 +49,12 @@ function signin(){
 	var param= {ciName:ciName, ciDesc:ciDesc};
 	param = "param=" + JSON.stringify(param);
 	$.ajax({
-		url : '/class/signin',
+		url : '/class/insert',
 		type : 'post',
 		data : param,
 		success:function(res){
 			var obj = JSON.parse(res);
-			alert(obj.msg);
+			alert(res);
 			if(obj.result=="ok"){
 				location.href="/view/class/list";
 			}

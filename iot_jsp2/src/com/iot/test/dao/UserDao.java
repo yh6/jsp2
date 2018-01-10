@@ -8,7 +8,7 @@ public interface UserDao {
 	ArrayList<UserClass> selectUserList();
 	UserClass selectUser(int uiNo);
 	UserClass selectUser(String uiId);
-	int insertUser(UserClass uc);
+	int signinUser(UserClass uc);
 	int updateUser(UserClass uc);
 	int deleteUSer(UserClass uc);
 }

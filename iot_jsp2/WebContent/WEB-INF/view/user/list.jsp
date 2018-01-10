@@ -35,7 +35,7 @@ td {
 					<div class="panel-heading">
 						<div class="row">
 							<div class="col col-xs-6">
-								<h3 class="panel-title">User List</h3>
+								<h3 class="panel-title">예약자 명단</h3>
 							</div>
 							<div class="col col-xs-6 text-right">
 								<input type="text" class="input">
@@ -48,7 +48,7 @@ td {
 							class="table table-striped table-bordered table-list">
 							<thead>
 								<tr>
-									<th class="text-center" data-field="uiNo,ro">번호</th>
+									<th  class="text-center" data-field="uiNo,ro" >번호</th>
 									<th class="text-center" data-field="uiId,ro">ID</th>
 									<th class="text-center" data-field="uiName,txt">이름</th>
 									<th class="text-center" data-field="uiAge,txt">나이</th>
@@ -98,7 +98,7 @@ function updateUser(uiNo){
 	var address = $("#address" + uiNo).val().trim();
 	var param = {uiNo:uiNo, uiName:uiName, uiAge:uiAge, address:address};
 	param = "param=" + JSON.stringify(param);
-	
+	if(isupdate){
 	$.ajax({
 		url : '/user/update',
 		type : 'post',
@@ -113,7 +113,7 @@ function updateUser(uiNo){
 		error:function(xhr,status,error){				
 		}
 	})
-	
+	}
 }
 
 var colsInfo = [];

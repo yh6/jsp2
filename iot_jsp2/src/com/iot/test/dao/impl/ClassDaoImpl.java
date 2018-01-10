@@ -58,10 +58,10 @@ public class ClassDaoImpl implements ClassDao{
 		ResultSet rs = null;
 		try {
 			con = DBCon.getCon();
-			String sql = "insert into class_info(ciname=?, cidesc=? values(?,?)";
+			String sql = "insert into class_info(ciname, cidesc) values(?,?)";
 			ps = con.prepareStatement(sql);
 			ps.setString(1, ci.getCiName());
-			ps.setString(2, ci.getCiDesc());					
+			ps.setString(2, ci.getCiDesc());
 			return ps.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -102,7 +102,7 @@ public class ClassDaoImpl implements ClassDao{
 	
 		try {
 			con = DBCon.getCon();
-			String sql = "delete from class_info where ciNo=?";
+			String sql = "delete from class_info where cino=?";
 			ps = con.prepareStatement(sql);
 			ps.setInt(1, ci.getCiNo());
 			return ps.executeUpdate();

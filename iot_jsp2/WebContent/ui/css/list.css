@@ -1,11 +1,13 @@
 @charset "UTF-8";
 .panel-table .panel-body{
   padding:0;
+  
 }
 
 .panel-table .panel-body .table-bordered{
   border-style: none;
   margin:0;
+  color: grey;
 }
 
 .panel-table .panel-body .table-bordered > thead > tr > th:first-of-type {

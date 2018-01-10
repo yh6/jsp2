@@ -40,8 +40,8 @@ $(document).ready(function(){
           <ul class="nav navbar-nav">
             <li><a href="<%=rootPath%>/">Home</a></li>
             <li><a href="<%=loginUrl%>"><%=loginMenu%></a></li>
-            <li><a href="<%=rootPath%>/view/user/list">User List</a></li>          
-            <li><a href="<%=rootPath%>/view/class/list">Class List</a></li>
+            <li><a href="<%=rootPath%>/view/user/list">예약자 </a></li>          
+            <li><a href="<%=rootPath%>/view/class/list">참가국</a></li>
           </ul>
         </div>
       </div>

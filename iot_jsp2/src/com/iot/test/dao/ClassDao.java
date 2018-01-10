@@ -9,7 +9,8 @@ import com.iot.test.vo.UserClass;
 public interface ClassDao {
 	List<ClassInfo> selectClassList();
 	ClassInfo selectClass(int ciNo);
-	int insertClass(ClassInfo ci);
+
 	int updateClass(ClassInfo ci);
 	int deleteClass(ClassInfo ci);
+	int insertClass(ClassInfo ci);
 }

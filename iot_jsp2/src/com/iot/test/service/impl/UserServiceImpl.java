@@ -4,7 +4,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.google.gson.Gson;
@@ -18,7 +20,7 @@ public class UserServiceImpl implements UserService{
 	private Gson gs = new Gson();
 	private UserDao ud = new UserDaoImpl(); 
 	@Override
-	public HashMap<String, Object> login(HttpServletRequest req) {
+	public HashMap<String, Object> login(HttpServletRequest req, HttpServletResponse res) {
 		
 		UserClass uc = gs.fromJson(req.getParameter("param"), UserClass.class);
 		System.out.println(uc.getUiId());
@@ -33,8 +35,22 @@ public class UserServiceImpl implements UserService{
 				hm.put("login", "no");
 			}
 			else {
+				System.out.println(uc.isSaveId());
+				Cookie cId = new Cookie("userId" , uc.getUiId());
+				cId.setPath("/");
+				Cookie cSave = new Cookie("saveId", ""+uc.isSaveId());
+				cSave.setPath("/");
+				int maxAge = 0;
+				if(uc.isSaveId()) {
+					maxAge=24*60*60;
+				}
+				cId.setMaxAge(maxAge);
+				cSave.setMaxAge(maxAge);
+				res.addCookie(cId);
+				res.addCookie(cSave);
 				HttpSession hs = req.getSession();
 				hs.setAttribute("user", checkUc);
+			
 			}
 		}
 		else {
@@ -55,7 +71,7 @@ public class UserServiceImpl implements UserService{
 	public void signin(HttpServletRequest req) {
 		String json = req.getParameter("param");
 		UserClass uc = gs.fromJson(json,UserClass.class);
-		int result = ud.insertUser(uc);
+		int result = ud.signinUser(uc);
 		Map<String,String> rm = new HashMap<String, String>();
 		rm.put("result","no");
 		rm.put("msg","회원가입 실패");

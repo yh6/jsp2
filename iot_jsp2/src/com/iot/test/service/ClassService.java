@@ -13,7 +13,7 @@ import com.iot.test.vo.ClassInfo;
 public interface ClassService {
 	// List<ClassInfo> getClassList();
 	public List<ClassInfo> getClassList();
-	public void signin(HttpServletRequest req);
+	public String insertClass(HttpServletRequest req);
 	public String deleteClass(HttpServletRequest req);
 	public String updateClass(HttpServletRequest req);
 

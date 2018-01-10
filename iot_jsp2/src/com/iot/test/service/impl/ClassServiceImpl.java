@@ -54,8 +54,10 @@ public class ClassServiceImpl implements ClassService{
 		return gs.toJson(rm);
 	
 	}
+
+	
 	@Override
-	public void signin(HttpServletRequest req) {
+	public String insertClass(HttpServletRequest req) {
 		String json = req.getParameter("param");
 		ClassInfo ci = gs.fromJson(json,ClassInfo.class);
 		int result = cdao.insertClass(ci);
@@ -66,7 +68,8 @@ public class ClassServiceImpl implements ClassService{
 			rm.put("result","ok");
 			rm.put("msg","추가 성공");
 		}
-		req.setAttribute("resStr", gs.toJson(rm));
+	    return gs.toJson(rm);
+		
 	}
 		
 	}
