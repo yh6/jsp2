@@ -68,6 +68,12 @@ function signin(){
 	var uiPwd = $("#uiPwd").val().trim();
 	var ciNo = $("#ciNo").val();
 	var address = $("#address").val().trim();
+	if(ciName.length<2){
+		alert("아이디 2글자 이상 가능합니다.");
+		$("#ciName").focus();
+		return;
+	}
+
 	var param= {uiName:uiName, uiAge:uiAge, uiId:uiId, uiPwd:uiPwd,ciNo:ciNo,address:address};
 	param = "param=" + JSON.stringify(param);
 	$.ajax({

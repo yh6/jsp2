@@ -45,6 +45,16 @@ function insert(){
 
 	var ciName = $("#ciName").val().trim();
 	var ciDesc = $("#ciDesc").val().trim();
+	if(ciName.length<2){
+		alert("아이디 2글자 이상 가능합니다.");
+		$("#ciName").focus();
+		return;
+	}
+		if(ciDesc.length<2){
+			alert(" 비밀번호 2글자 이상 가능합니다. ");
+			$("#ciDesc").focus();
+			return;
+		}
 
 	var param= {ciName:ciName, ciDesc:ciDesc};
 	param = "param=" + JSON.stringify(param);

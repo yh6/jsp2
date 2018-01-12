@@ -49,8 +49,8 @@
 <script>
 <!-- alert("World Fireworks Festival"); -->
 function checkValue(){
-	var objs = $(".container");
-	var userId = $("#userId").val().trim();
+	var objs = $(".container");              <!--.클래스-->
+	var userId = $("#userId").val().trim();    <!--#아이디만 갖고온다-->
 	var userPwd = $("#userPwd").val().trim();
 	var saveId = $('#saveId').prop("checked");
 	if(userId.length<2){
