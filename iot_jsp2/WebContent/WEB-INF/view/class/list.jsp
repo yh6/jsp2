@@ -39,7 +39,7 @@ td {
 
 							<div class="col col-xs-6">
 								<h3 class="panel-title" >
-									참가국-테마
+									Class List
 					<button type="button" class="btn btn-sm btn-primary btn-create"
 						
 										onclick="signin()">추가</button>
@@ -61,8 +61,8 @@ td {
 							<thead>
 								<tr>
 									<th class="text-center" data-field="ciNo,ro">번호</th>
-									<th class="text-center" data-field="ciName,txt">참가국</th>
-									<th class="text-center" data-field="ciDesc,txt">테마</th>
+									<th class="text-center" data-field="ciName,txt">반</th>
+									<th class="text-center" data-field="ciDesc,txt">반정보</th>
 
 									<th class="text-center" data-field="BTN"><em
 										class="glyphicon glyphicon-cog"></em></th>

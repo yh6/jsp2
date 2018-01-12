@@ -3,7 +3,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>list</title>
 
 <style>
 body {
@@ -35,7 +35,7 @@ td {
 					<div class="panel-heading">
 						<div class="row">
 							<div class="col col-xs-6">
-								<h3 class="panel-title">예약자 명단</h3>
+								<h3 class="panel-title">User List</h3>
 							</div>
 							<div class="col col-xs-6 text-right">
 								<input type="text" class="input">

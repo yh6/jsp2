@@ -45,10 +45,9 @@
 	<br><a href="/view/user/signin" style="color: white">회원가입</a>
 	
 
-
 </body>
 <script>
-alert("World Fireworks Festival");
+<!-- alert("World Fireworks Festival"); -->
 function checkValue(){
 	var objs = $(".container");
 	var userId = $("#userId").val().trim();
